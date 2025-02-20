@@ -7,7 +7,15 @@ interface ClassComponentProps {
   color?: string;
 }
 
-class ClassComponent extends Component<ClassComponentProps> {
+interface ClassComponentState {
+  isLoading: boolean;
+}
+
+class ClassComponent extends Component<ClassComponentProps, ClassComponentState> {
+  state = {
+    isLoading: true,
+  };
+
   render() {
     return (
       <div>
